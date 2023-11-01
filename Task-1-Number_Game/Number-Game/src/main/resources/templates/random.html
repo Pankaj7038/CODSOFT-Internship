@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Number Game</title>
+</head>
+<body>
+    <h1>Random Number Game</h1>
+    
+    <form action="/" method="post">
+        <label for="userGuess">Enter your guess:</label>
+        <input type="number" id="userGuess" name="userGuess" required>
+        <button type="submit">Submit Guess</button>
+    </form>
+    
+    <p th:if="${result eq 'correct'}">Congratulations! You guessed correctly.</p>
+    <p th:if="${result eq 'high'}">Your guess is too high.</p>
+    <p th:if="${result eq 'low'}">Your guess is too low.</p>
+    
+    <p th:if="${submitted}" th:text="'Your Guess: ' + ${userGuess}"></p>
+    <p th:if="${submitted}" th:text="'Random Number: ' + ${randomNumber}"></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

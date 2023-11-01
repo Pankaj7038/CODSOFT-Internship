@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Count Tool</title>
+</head>
+<body>
+    <h1>Word Count Tool</h1>
+    <form action="/countWords" method="post" enctype="multipart/form-data">
+        <label for="textInput">Enter Text:</label>
+        <textarea id="textInput" name="textInput" rows="4" cols="50"></textarea>
+        <br>
+        <label for="file">Or Upload a File:</label>
+        <input type="file" id="file" name="file">
+        <br>
+        <button type="submit">Count Words</button>
+    </form>
+    <p th:if="${wordCount != null}">Total Words: <span th:text="${wordCount}"></span></p>
+</body>
+</html>
